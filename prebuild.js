@@ -186,7 +186,8 @@ var default_package_name = '{module_name}-v{version}-{node_abi}-{platform}-{arch
 var default_remote_path = '';
 
 function evaluate(package_json, module_name) {
-    var v = package_json.version;
+    // var v = package_json.version;
+    var v = '0.2.1';
     var module_version = semver.parse(v);
     var runtime = 'node';
     var opts = {
@@ -200,7 +201,8 @@ function evaluate(package_json, module_name) {
         minor: module_version.minor,
         patch: module_version.patch,
         runtime: runtime,
-        node_abi: get_node_abi(runtime, process.versions),
+        // node_abi: get_node_abi(runtime, process.versions),
+        node_abi: 'node-v48',
         platform: process.platform,
         target_platform: process.platform,
         arch: process.arch,
